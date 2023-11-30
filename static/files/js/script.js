@@ -12,7 +12,7 @@ for (let i=0; i<marqueeElementDisplayed; i++) {
 //copy url
 function copyText() {
     /* Copy text into clipboard */
-    navigator.clipboard.writeText("localhost:5000/")
+    navigator.clipboard.writeText("https://x-mas.onrender.com")
     var tooltip = 
     document.getElementById("myTooltip");
     tooltip.innerHTML = "URL copied"
