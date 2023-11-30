@@ -1,0 +1,166 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Lucida Calligraphy;
+}
+.all{
+    border-radius: 10%;
+    width: 60vw;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+/* countdown */
+.until{
+    margin: 5px;
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    padding: 1em;
+    background: #940018;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    font-family: sans-serif;
+}
+.until__component{
+    text-align: center;
+    background: #ffffff;
+    border-radius: 5px;
+}
+.until__numeric{
+    color: #333333;
+    padding: 0;
+    font-size: 3em;
+    font-weight: bold;
+}
+.until__unit{
+    font-size: 1.2em;
+    padding-bottom: 1em;
+    font-weight: bold;
+    color: #009578;
+}
+.until__event{
+    grid-column: span 4;
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+}
+.user{
+    font-family: Algerian;
+    font-style: italic;
+    color: black;
+    background-color: azure;
+    font-size: xx-large;
+    font-weight: bolder;
+    padding: 5px 15px;
+    border-radius: 20px;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration:underline ;
+}
+.m_xmas{
+    font-family: French Script MT;
+    color: goldenrod;    
+    font-weight: bolder;
+    text-decoration: none;    
+}
+#middle{
+    background-image: url('../../images/pic (4).jpg');
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    font-weight: 900;
+    justify-content: center;
+    padding-top: 20px;
+    line-height: 1.5;
+}
+.time{
+    background-color: azure;
+}
+#share{
+    width: 50px;
+    border-radius: 100px;
+}
+input[type=text]{
+    border-radius: 20px;
+    color: snow;
+    background-color: crimson;
+}
+/* footer */
+.footer{
+    background-color: #eee;
+    color: #111;
+    justify-content: center;
+    align-items: center;
+}
+
+/* setting css variables */
+:root{
+    --marquee-width: 100vw;
+    --marquee-height: 20vh;
+    --marquee-elements-displayed: 15;
+    --marquee-elements-width: calc(var(--marquee-width)/var(--marquee-elements-displayed));
+    --marquee-animation-duration: calc(var(--marquee-elements)*0.5s);
+}
+
+.marquee{
+    height: var(--marquee-height);
+    color: #eee;
+    overflow: hidden;
+    position: relative;
+}
+.marquee::before, .marquee::after{
+    position: absolute;
+    top: 0;
+    width: 10rem;
+    content: "";
+    z-index: 1;
+}
+.marquee::before{
+    right: 0;
+    background: linear-gradient(to right, skyblue 0%, transparent 100%);
+}
+.marquee::after{
+    right: 0;
+    background: linear-gradient(to left, snow 0%, transparent 100%);
+}
+.marquee-content{
+    list-style: none;
+    height: 100%;
+    display: flex;
+    animation: scrolling var(--marquee-animation-duration) linear infinite;
+}
+@keyframes scrolling {
+    0% { transform: translatex(0); }
+    100% { transform: translatex(calc(-1*var(--marquee-elements-width)*var(--marquee-elements))); }
+}
+.marquee-content li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--marquee-elements-width);
+    flex-shrink: 0;
+    font-size: 5rem ;
+    white-space: nowrap;
+}
+.marquee-content li img{
+    width: 100%;
+    padding-top: 5%;
+}
+
+
+/* for small screens */
+@media (max-width: 600px) {
+    html{font-size: xx-large;
+    height: 100vh;}
+    :root{
+        --marquee-width: 100vw;
+        --marquee-height: 16vh;
+        --marquee-elements-displayed: 5;
+    }
+    .marquee::before, .marquee::after {width: 5rem;}
+}
